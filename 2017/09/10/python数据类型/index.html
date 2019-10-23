@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>python数据类型 | ck&#39;s notes</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="ck's notes">
+    <meta name="author" content="ck">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="ck&#39;s notes" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">Docker</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">OpenStack</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li> 
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">ck's notes</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-09-10T06:49:35.000Z" itemprop="datePublished">
+          2017-09-10
+      </time>
+    
+    
+    | 
+    <a href='/tags/python/'>python</a>
+    
+    
+</span>
+                <h1>python数据类型</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>Python3 中有六个标准的数据类型：</p>
+<ul>
+<li>Number（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Sets（集合）</li>
+<li>Dictionary（字典）</li>
+</ul>
+<h4 id="1-数字"><a href="#1-数字" class="headerlink" title="1.数字"></a>1.数字</h4><ul>
+<li>int (整型)<br>   在在32位机器上，整数的位数为32位<br>   在64位系统上，整数的位数为64位</li>
+<li>long （长整型）<br>   Python没有限制长整数数值的大小，但由于机器内存有限，使用的长整数数值不可能无限大</li>
+<li>float （浮点型）<br>   利用科学计数法来表达实数，带有小数点</li>
+<li>complex (复数)<br>   a+bi（a,b均为实数）的数称为复数，其中a称为实部，b称为虚部，i称为虚数单位</li>
+</ul>
+<h4 id="2-字符串"><a href="#2-字符串" class="headerlink" title="2.字符串"></a>2.字符串</h4><p> Python中的字符串用单引号(‘)或双引号(“)括起来<br>    “hello word”</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str = &quot;hello world&quot;</span><br><span class="line">###</span><br><span class="line">print (str)             # 输出字符串</span><br><span class="line">print (str[0:-1])       # 输出第一个到倒数第二个的所有字符</span><br><span class="line">print (str[0])          # 输出字符串第一个字符</span><br><span class="line">print (str[2:5])        # 输出从第三个开始到第五个的字符</span><br><span class="line">print (str[2:])         # 输出从第三个开始的后的所有字符</span><br><span class="line">print (str * 2)         # 输出字符串两次</span><br><span class="line">print (str + &quot;TEST&quot;)   # 连接字符串</span><br></pre></td></tr></table></figure>
+<p> 输出结果：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hello worl</span><br><span class="line">h</span><br><span class="line">llo</span><br><span class="line">llo world</span><br><span class="line">hello worldhello world</span><br><span class="line">hello worldTEST</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-列表"><a href="#3-列表" class="headerlink" title="3.列表"></a>3.列表</h4><p> List（列表） 是 Python 中使用最频繁的数据类型。<br> 列表可以完成大多数集合类的数据结构实现。列表中元素的类型可以不相同，它支持数字，字符串甚至可以包含列表（所谓嵌套）。<br> 列表是写在方括号([])之间、用逗号分隔开的元素列表。<br> 和字符串一样，列表同样可以被索引和截取，列表被截取后返回一个包含所需元素的新列表。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fruits = [&apos;apple&apos;, &apos;banana&apos;,&apos;orange&apos;,&apos;peach&apos;,&apos;cherry&apos;]</span><br><span class="line">vegetables = [&apos;lettuce&apos;,&apos;asparagus&apos;]</span><br><span class="line">###</span><br><span class="line">print (fruits)              # 输出完整列表</span><br><span class="line">print (fruits[0])           # 输出列表第一个元素</span><br><span class="line">print (fruits[1:3])         # 从第二个开始输出到第三个元素</span><br><span class="line">print (fruits[2:])          # 输出从第三个元素开始的所有元素</span><br><span class="line">print (vegetables * 2)      # 输出两次列表</span><br><span class="line">print (fruits + vegetables) # 连接列表</span><br></pre></td></tr></table></figure>
+<p> 输出结果：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;orange&apos;, &apos;peach&apos;, &apos;cherry&apos;]</span><br><span class="line">apple</span><br><span class="line">[&apos;banana&apos;, &apos;orange&apos;]</span><br><span class="line">[&apos;orange&apos;, &apos;peach&apos;, &apos;cherry&apos;]</span><br><span class="line">[&apos;lettuce&apos;, &apos;asparagus&apos;, &apos;lettuce&apos;, &apos;asparagus&apos;]</span><br><span class="line">[&apos;apple&apos;, &apos;banana&apos;, &apos;orange&apos;, &apos;peach&apos;, &apos;cherry&apos;, &apos;lettuce&apos;, &apos;asparagus&apos;]</span><br></pre></td></tr></table></figure></p>
+<h4 id="4-元组"><a href="#4-元组" class="headerlink" title="4.元组"></a>4.元组</h4><p> 元组（tuple）与列表类似，不同之处在于元组的元素不能修改。元组写在小括号(())里，元素之间用逗号隔开。<br> 元组中的元素类型也可以不相同<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fruits = (&apos;apple&apos;, &apos;banana&apos;,&apos;orange&apos;,&apos;peach&apos;,&apos;cherry&apos;)</span><br><span class="line">vegetables = (&apos;lettuce&apos;,&apos;asparagus&apos;,123)</span><br><span class="line">###</span><br><span class="line">print (fruits)              # 输出完整元组</span><br><span class="line">print (fruits[0])           # 输出列表第一个元素</span><br><span class="line">print (fruits[1:3])         # 从第二个开始输出到第三个元素</span><br><span class="line">print (fruits[2:])          # 输出从第三个元素开始的所有元素</span><br><span class="line">print (vegetables * 2)      # 输出两次列表</span><br><span class="line">print (fruits + vegetables) # 连接元组</span><br></pre></td></tr></table></figure></p>
+<p> 输出结果：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(&apos;apple&apos;, &apos;banana&apos;, &apos;orange&apos;, &apos;peach&apos;, &apos;cherry&apos;)</span><br><span class="line">apple</span><br><span class="line">(&apos;banana&apos;, &apos;orange&apos;)</span><br><span class="line">(&apos;orange&apos;, &apos;peach&apos;, &apos;cherry&apos;)</span><br><span class="line">(&apos;lettuce&apos;, &apos;asparagus&apos;, 123, &apos;lettuce&apos;, &apos;asparagus&apos;, 123)</span><br><span class="line">(&apos;apple&apos;, &apos;banana&apos;, &apos;orange&apos;, &apos;peach&apos;, &apos;cherry&apos;, &apos;lettuce&apos;, &apos;asparagus&apos;, 123)</span><br></pre></td></tr></table></figure></p>
+<h4 id="5-集合"><a href="#5-集合" class="headerlink" title="5.集合"></a>5.集合</h4><p> 集合（set）是一个无序不重复元素的序列。<br> 基本功能是进行成员关系测试和删除重复元素。<br> 可以使用大括号 { } 或者 set() 函数创建集合，<br> 注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">fruits = &#123;&apos;apple&apos;,&apos;apple&apos;, &apos;banana&apos;,&apos;orange&apos;,&apos;peach&apos;,&apos;cherry&apos;&#125;</span><br><span class="line">###</span><br><span class="line">print(fruits)                              #输出集合，重复元素自动去掉</span><br><span class="line">if (&apos;apple&apos; in fruits):</span><br><span class="line">   print(&quot;apple in set&quot;)</span><br><span class="line">else:</span><br><span class="line">   print(&quot;apple not in set&quot;)</span><br><span class="line">###</span><br><span class="line">a = set(&apos;asdfghgjkl&apos;)</span><br><span class="line">b = set(&apos;fghjklqwert&apos;)</span><br><span class="line">###</span><br><span class="line">print(a - b)                                #a和b的差集</span><br><span class="line">print(a | b)                                #a和b的并集</span><br><span class="line">print(a &amp; b)                                #a和b的交集</span><br><span class="line">print(a ^ b)                                #a和b不同时存在的元素</span><br></pre></td></tr></table></figure>
+
+<p> 输出结果:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;apple&apos;, &apos;banana&apos;, &apos;orange&apos;, &apos;cherry&apos;, &apos;peach&apos;&#125;</span><br><span class="line">apple in set</span><br><span class="line">&#123;&apos;s&apos;, &apos;d&apos;, &apos;a&apos;&#125;</span><br><span class="line">&#123;&apos;e&apos;, &apos;j&apos;, &apos;k&apos;, &apos;t&apos;, &apos;a&apos;, &apos;g&apos;, &apos;l&apos;, &apos;w&apos;, &apos;r&apos;, &apos;d&apos;, &apos;s&apos;, &apos;f&apos;, &apos;q&apos;, &apos;h&apos;&#125;</span><br><span class="line">&#123;&apos;j&apos;, &apos;k&apos;, &apos;g&apos;, &apos;l&apos;, &apos;f&apos;, &apos;h&apos;&#125;</span><br><span class="line">&#123;&apos;e&apos;, &apos;t&apos;, &apos;w&apos;, &apos;a&apos;, &apos;r&apos;, &apos;d&apos;, &apos;s&apos;, &apos;q&apos;&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="6-字典"><a href="#6-字典" class="headerlink" title="6.字典"></a>6.字典</h4><p> 字典（dictionary）是Python中另一个非常有用的内置数据类型。<br> 列表是有序的对象结合，字典是无序的对象集合。两者之间的区别在于：字典当中的元素是通过键来存取的，而不是通过偏移存取。<br> 字典是一种映射类型，字典用”{ }”标识，它是一个无序的键(key) : 值(value)对集合。<br> 键(key)必须使用不可变类型。<br> 在同一个字典中，键(key)必须是唯一的。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#125;</span><br><span class="line">dict[&apos;one&apos;] = &quot;1 - fruits&quot;</span><br><span class="line">dict[2]      = &quot;2 - vegetables&quot;</span><br><span class="line">ckdict = &#123;&apos;name&apos;:&apos;ck&apos;, &apos;code&apos;:&apos;1&apos;, &apos;site&apos;:&apos;cknotes.cn&apos;&#125;</span><br><span class="line">###</span><br><span class="line">print (dict[&apos;one&apos;])       # 输出键为 &apos;one&apos; 的值</span><br><span class="line">print (dict[2])            # 输出键为 2 的值</span><br><span class="line">print (ckdict)             # 输出完整的字典</span><br><span class="line">print (ckdict.keys())      # 输出所有键</span><br><span class="line">print (ckdict.values())    # 输出所有值</span><br></pre></td></tr></table></figure>
+
+<p> 输出结果:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 - fruits</span><br><span class="line">2 - vegetables</span><br><span class="line">&#123;&apos;name&apos;: &apos;ck&apos;, &apos;code&apos;: &apos;1&apos;, &apos;site&apos;: &apos;cknotes.cn&apos;&#125;</span><br><span class="line">dict_keys([&apos;name&apos;, &apos;code&apos;, &apos;site&apos;])</span><br><span class="line">dict_values([&apos;ck&apos;, &apos;1&apos;, &apos;cknotes.cn&apos;])</span><br></pre></td></tr></table></figure></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/09/11/python-loop-1/" style="float: left;">
+        ← python条件控制
+    </a>
+    
+    
+    <a class="pull-right" href="/2017/08/22/sed/">
+        sed简单用法 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ck. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
