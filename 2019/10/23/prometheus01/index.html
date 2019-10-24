@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>初试prometheus | ck&#39;s notes</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="ck's notes">
+    <meta name="author" content="ck">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="ck&#39;s notes" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">Docker</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">OpenStack</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/python/" class="animsition-link">python<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/监控/" class="animsition-link">监控<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li> 
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">ck's notes</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-23T08:09:15.000Z" itemprop="datePublished">
+          2019-10-23
+      </time>
+    
+    
+    | 
+    <a href='/tags/Prometheus/'>Prometheus</a>
+    
+    
+</span>
+                <h1>初试prometheus</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>什么是prometheus</p>
+<p><a href="https://prometheus.io" target="_blank" rel="noopener">Prometheus</a> 是由前 Google 工程师从 2012 年开始在 Soundcloud 以开源软件的形式进行研发的系统监控和告警工具包，自此以后，许多公司和组织都采用了 Prometheus 作为监控告警工具。Prometheus 的开发者和用户社区非常活跃，它现在是一个独立的开源项目，可以独立于任何公司进行维护。为了证明这一点，Prometheus 于 2016 年 5 月加入 CNCF 基金会，成为继 Kubernetes 之后的第二个 CNCF 托管项目。</p>
+<hr>
+<h3 id="Prometheus优势"><a href="#Prometheus优势" class="headerlink" title="Prometheus优势"></a>Prometheus优势</h3><p><strong>prometheus的优势有</strong></p>
+<ul>
+<li>由指标名称和和键/值对标签标识的时间序列数据组成的多维数据模型。</li>
+<li>强大的查询语言 PromQL。</li>
+<li>不依赖分布式存储；单个服务节点具有自治能力。</li>
+<li>时间序列数据是服务端通过 HTTP 协议主动拉取获得的。</li>
+<li>也可以通过中间网关来推送时间序列数据。</li>
+<li>可以通过静态配置文件或服务发现来获取监控目标。</li>
+<li>支持多种类型的图表和仪表盘，与Grafana无缝衔接。</li>
+</ul>
+<hr>
+<h3 id="Prometheus组件"><a href="#Prometheus组件" class="headerlink" title="Prometheus组件"></a>Prometheus组件</h3><p>Prometheus 生态系统由多个组件组成，其中有许多组件是可选的：</p>
+<ul>
+<li>Prometheus Server: 作为服务端，用来存储时间序列数据。</li>
+<li>Client libraries: 用来检测应用程序代码。</li>
+<li>Push gateway: 用于支持临时任务的推送网关。</li>
+<li>Exporter: 用来监控 HAProxy，StatsD，Graphite 等特殊的监控目标，并向 Prometheus 提供标准格式的监控样本数据。</li>
+<li>Alartmanager: 用来处理告警。</li>
+<li>其他各种周边工具。</li>
+</ul>
+<p>其中大多数组件都是用 Go 编写的，因此很容易构建和部署为静态二进制文件。</p>
+<p>Prometheus的整体架构以及生态系统组件：</p>
+<p><img src="/.cn//pro-architecture.png" alt></p>
+<p>工作流程、概念网上一大推，不在描述。</p>
+<hr>
+<h4 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h4><table>
+<thead>
+<tr>
+<th>环境/组件</th>
+<th>版本</th>
+<th>下载地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Linux</td>
+<td>centos 7.3</td>
+<td><a href="https://mirrors.huaweicloud.com/centos/" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/centos/</a></td>
+</tr>
+<tr>
+<td>Prometheus</td>
+<td>prometheus-2.13.1</td>
+<td><a href="https://prometheus.io/download/" target="_blank" rel="noopener">https://prometheus.io/download/</a></td>
+</tr>
+<tr>
+<td>Grafana</td>
+<td>grafana-6.2.0-1</td>
+<td><a href="https://grafana.com/grafana/download" target="_blank" rel="noopener">https://grafana.com/grafana/download</a></td>
+</tr>
+<tr>
+<td>Go</td>
+<td>go1.13.3</td>
+<td><a href="https://github.com/golang/go/releases" target="_blank" rel="noopener">https://github.com/golang/go/releases</a></td>
+</tr>
+</tbody></table>
+<p><em>注：版本仅供参考，自行选择</em></p>
+<hr>
+<h4 id="Go安装"><a href="#Go安装" class="headerlink" title="Go安装"></a>Go安装</h4><p>1、解压安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~]# tar xvf go1.13.3.linux-amd64.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
+<p>2、配置环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~]# echo &quot;export PATH=$PATH:/usr/local/go/bin&quot; &gt;&gt; /etc/profile</span><br><span class="line">~]# source /etc/profile</span><br></pre></td></tr></table></figure>
+<p>3、验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~]# go version</span><br><span class="line">go version go1.13.3 linux/amd64</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Pronetheus安装"><a href="#Pronetheus安装" class="headerlink" title="Pronetheus安装"></a>Pronetheus安装</h4><p>1、安装exporter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~]# tar zxvf node_exporter-0.18.1.linux-amd64.tar.gz -C /usr/local/</span><br><span class="line">~]# cd node_exporter-0.18.1.linux-amd64/</span><br></pre></td></tr></table></figure>
+<p>2、启动</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~]# nohup ./node_exporter &amp;</span><br></pre></td></tr></table></figure>
+<p>3、安装Prometheus server</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~]# tar -C /usr/local/ -xvf prometheus-2.13.1.linux-amd64.tar.gz</span><br><span class="line">~]# ln -sv /usr/local/prometheus-2.13.1.linux-amd64/ /usr/local/Prometheus</span><br></pre></td></tr></table></figure>
+<p>4、配置prometheus.yml,添加node_exporter信息，默认端口为9100</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~]# vi prometheus.yml</span><br><span class="line"><span class="bullet">  - </span>job_name: 'test'</span><br><span class="line"><span class="code">    static_configs:</span></span><br><span class="line"><span class="bullet">    - </span>targets: ['192.168.<span class="emphasis">*:*</span>:9100']</span><br><span class="line"><span class="code">      labels:</span></span><br><span class="line"><span class="code">        instance: test</span></span><br></pre></td></tr></table></figure>
+<p><em>注：配置文件要注意yml文件格式，有相应格式报错是可以网上找个检测下格式</em></p>
+<p>5、启动prometheus服务</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~]#nohup ./prometheus --config.file=prometheus.yml &gt;/tmp/prolog &amp;</span><br></pre></td></tr></table></figure>
+<p>6、网页验证<br>浏览器IP:9090打开prometheus自带页面<br><img src="/.cn//yz.png" alt></p>
+<hr>
+<h4 id="Grafana安装"><a href="#Grafana安装" class="headerlink" title="Grafana安装"></a>Grafana安装</h4><p>Prometheus页面可能看起来不是那么友好，那么我们可以安装Grafana是监控看起来更加美观炫酷。<br>1、安装grafana</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~]# yum install -y grafana-6.2.0-1.x86_64.rpm</span><br></pre></td></tr></table></figure>
+<p>2、启动服务</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~]# systemctl daemon-reload</span><br><span class="line">~]# systemctl enable grafana-server.service</span><br><span class="line">~]# systemctl start grafana-server.service</span><br></pre></td></tr></table></figure>
+<p>3、访问Grafana<br>浏览器访问IP:3000端口，即可打开grafana页面，默认用户名密码都是admin，初次登录会要求修改默认的登录密码。<br>    <img src="/.cn//grafanalogin.png" alt><br>    <img src="/.cn//grafanahome.png" alt><br>    <img src="/.cn//10/23/prometheus01/grafanalogin.png" class></p>
+<p>4、添加prometheus数据源</p>
+<p>（1）点击主界面“Add data source”<br>    <img src="/.cn//grafanaaddsrc.png" alt><br><em>注：由于我已添加过数据，些许与初次添加不一致</em></p>
+<p>（2）选择Prometheus<br>    <img src="/.cn//graaddpro.png" alt></p>
+<p>（3）在Dashboards页面选择 “Prometheus 2.0 Stats” 并import<br>    <img src="/.cn//graimpboa.png" alt></p>
+<p>（4）在 settings 页面填写promethus server 地址并保存<br>    <img src="/.cn//graoconfurl.png" alt></p>
+<p>（5）切换到刚才添加的 “Prometheus 2.0 Stats” 即可看到整个监控页面<br>    <img src="/.cn//grachsts.png" alt></p>
+<p>至此基本功能已经搭建完成。</p>
+<hr>
+<h5 id="修改Grafana-dashboard"><a href="#修改Grafana-dashboard" class="headerlink" title="修改Grafana dashboard"></a>修改Grafana dashboard</h5><p>导入自定义的dashboard</p>
+<ul>
+<li><p>相应的json可在官方下载</p>
+<p>grafana dashboard<a href="https://grafana.com/grafana/dashboards" target="_blank" rel="noopener">下载地址</a><br><img src="/.cn//gramanage.png" alt></p>
+</li>
+<li><p>点击 import<br> <img src="/.cn//gramanageself.png" alt></p>
+</li>
+<li><p>上传 json 文件<br><img src="/.cn//graupjson.png" alt></p>
+</li>
+<li><p>修改名字、选择数据源<br><img src="/.cn//grachname.png" alt></p>
+</li>
+<li><p>切换回监控页面，看到刚刚设置的test监控<br><img src="/.cn//granewboa.png" alt></p>
+<p>发现首页有个报错 “panel plugin not found: grafana-piechrat-panel”,提示缺少这个插件，<br>grafana的默认插件目录是/var/lib/grafana/plugins，可以将下载好的插件解压到这个目录，重启grafana即可。</p>
+<p> grafana plugins：<a href="https://grafana.com/grafana/plugins" target="_blank" rel="noopener">下载地址</a></p>
+<ul>
+<li>解压插件到指定目录并重启grafana  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~]#  unzip -d /var/lib/grafana/plugins/ grafana-piechart-panel.zip </span><br><span class="line">~]# systemctl restart grafana-server</span><br></pre></td></tr></table></figure>
+  也可以通过grafana-cli安装  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grafana-cli plugins install grafana-piechart-panel</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看已安装的插件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~]# grafana-cli plugins ls</span><br><span class="line">installed plugins:</span><br><span class="line">alexanderzobnin-zabbix-app @ 3.10.4 </span><br><span class="line">grafana-piechart-panel @ 1.3.9</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>刷新页面，显示正常<br>  <img src="/.cn//graboaok.png" alt></li>
+</ul>
+</li>
+</ul>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2017/09/11/python-loop-1/">
+        python条件控制 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ck. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      (function(){
+        console.log('font');
+        var getCss = function(path) {
+          var head = document.getElementsByTagName('head')[0];
+          link = document.createElement('link');
+          link.href = path;
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          head.appendChild(link);
+        };
+        getCss('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+        getCss('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+      })();
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
