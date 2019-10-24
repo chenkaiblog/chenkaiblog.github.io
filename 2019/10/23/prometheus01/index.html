@@ -263,27 +263,27 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~]# yum install -y grafana-6.2.0-1.x86_64.rpm</span><br></pre></td></tr></table></figure>
 <p>2、启动服务</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~]# systemctl daemon-reload</span><br><span class="line">~]# systemctl enable grafana-server.service</span><br><span class="line">~]# systemctl start grafana-server.service</span><br></pre></td></tr></table></figure>
-<p>3、访问Grafana<br>浏览器访问IP:3000端口，即可打开grafana页面，默认用户名密码都是admin，初次登录会要求修改默认的登录密码<br>    <img src="/.cn//grafanalogin.png" alt><br>    <img src="/.cn//grafanahome.png" alt><br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/grafanalogin.png" alt></p>
+<p>3、访问Grafana<br>浏览器访问IP:3000端口，即可打开grafana页面，默认用户名密码都是admin，初次登录会要求修改默认的登录密码<br>      <img src="http://cknotes.cn/2019/10/23/prometheus01/grafanalogin.png" alt><br>      <img src="http://cknotes.cn/2019/10/23/prometheus01/grafanahome.png" alt></p>
 <p>4、添加prometheus数据源</p>
-<p>（1）点击主界面“Add data source”<br>    <img src="/.cn//grafanaaddsrc.png" alt><br><em>注：由于我已添加过数据，些许与初次添加不一致</em></p>
-<p>（2）选择Prometheus<br>    <img src="/.cn//graaddpro.png" alt></p>
-<p>（3）在Dashboards页面选择 “Prometheus 2.0 Stats” 并import<br>    <img src="/.cn//graimpboa.png" alt></p>
-<p>（4）在 settings 页面填写promethus server 地址并保存<br>    <img src="/.cn//graoconfurl.png" alt></p>
-<p>（5）切换到刚才添加的 “Prometheus 2.0 Stats” 即可看到整个监控页面<br>    <img src="/.cn//grachsts.png" alt></p>
+<p>（1）点击主界面“Add data source”<br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/grafanaaddsrc.png" alt><br><em>注：由于我已添加过数据，些许与初次添加不一致</em></p>
+<p>（2）选择Prometheus<br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/graaddpro.png" alt></p>
+<p>（3）在Dashboards页面选择 “Prometheus 2.0 Stats” 并import<br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/graimpboa.png" alt></p>
+<p>（4）在 settings 页面填写promethus server 地址并保存<br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/graoconfurl.png" alt></p>
+<p>（5）切换到刚才添加的 “Prometheus 2.0 Stats” 即可看到整个监控页面<br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/grachsts.png" alt></p>
 <p>至此基本功能已经搭建完成。</p>
 <hr>
 <h5 id="修改Grafana-dashboard"><a href="#修改Grafana-dashboard" class="headerlink" title="修改Grafana dashboard"></a>修改Grafana dashboard</h5><p>导入自定义的dashboard</p>
 <ul>
 <li><p>相应的json可在官方下载</p>
-<p>grafana dashboard<a href="https://grafana.com/grafana/dashboards" target="_blank" rel="noopener">下载地址</a><br><img src="/.cn//gramanage.png" alt></p>
+<p>grafana dashboard<a href="https://grafana.com/grafana/dashboards" target="_blank" rel="noopener">下载地址</a><br><img src="http://cknotes.cn/2019/10/23/prometheus01/gramanage.png" alt></p>
 </li>
-<li><p>点击 import<br> <img src="/.cn//gramanageself.png" alt></p>
+<li><p>点击 import<br> <img src="http://cknotes.cn/2019/10/23/prometheus01/gramanageself.png" alt></p>
 </li>
-<li><p>上传 json 文件<br><img src="/.cn//graupjson.png" alt></p>
+<li><p>上传 json 文件<br><img src="http://cknotes.cn/2019/10/23/prometheus01/graupjson.png" alt></p>
 </li>
-<li><p>修改名字、选择数据源<br><img src="/.cn//grachname.png" alt></p>
+<li><p>修改名字、选择数据源<br><img src="http://cknotes.cn/2019/10/23/prometheus01/grachname.png" alt></p>
 </li>
-<li><p>切换回监控页面，看到刚刚设置的test监控<br><img src="/.cn//granewboa.png" alt></p>
+<li><p>切换回监控页面，看到刚刚设置的test监控<br><img src="http://cknotes.cn/2019/10/23/prometheus01/granewboa.png" alt></p>
 <p>发现首页有个报错 “panel plugin not found: grafana-piechrat-panel”,提示缺少这个插件，<br>grafana的默认插件目录是/var/lib/grafana/plugins，可以将下载好的插件解压到这个目录，重启grafana即可。</p>
 <p> grafana plugins：<a href="https://grafana.com/grafana/plugins" target="_blank" rel="noopener">下载地址</a></p>
 <ul>
@@ -293,7 +293,7 @@
 <li>查看已安装的插件 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~]# grafana-cli plugins ls</span><br><span class="line">installed plugins:</span><br><span class="line">alexanderzobnin-zabbix-app @ 3.10.4 </span><br><span class="line">grafana-piechart-panel @ 1.3.9</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li>刷新页面，显示正常<br>  <img src="/.cn//graboaok.png" alt></li>
+<li>刷新页面，显示正常<br>  <img src="http://cknotes.cn/2019/10/23/prometheus01/graboaok.png" alt></li>
 </ul>
 </li>
 </ul>
