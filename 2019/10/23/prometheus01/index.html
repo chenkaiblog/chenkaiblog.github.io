@@ -263,7 +263,7 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~]# yum install -y grafana-6.2.0-1.x86_64.rpm</span><br></pre></td></tr></table></figure>
 <p>2、启动服务</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~]# systemctl daemon-reload</span><br><span class="line">~]# systemctl enable grafana-server.service</span><br><span class="line">~]# systemctl start grafana-server.service</span><br></pre></td></tr></table></figure>
-<p>3、访问Grafana<br>浏览器访问IP:3000端口，即可打开grafana页面，默认用户名密码都是admin，初次登录会要求修改默认的登录密码<br>    <img src="/.cn//grafanalogin.png" alt><br>    <img src="/.cn//grafanahome.png" alt></p>
+<p>3、访问Grafana<br>浏览器访问IP:3000端口，即可打开grafana页面，默认用户名密码都是admin，初次登录会要求修改默认的登录密码<br>    <img src="/.cn//grafanalogin.png" alt><br>    <img src="/.cn//grafanahome.png" alt><br>    <img src="http://cknotes.cn/2019/10/23/prometheus01/grafanalogin.png" alt></p>
 <p>4、添加prometheus数据源</p>
 <p>（1）点击主界面“Add data source”<br>    <img src="/.cn//grafanaaddsrc.png" alt><br><em>注：由于我已添加过数据，些许与初次添加不一致</em></p>
 <p>（2）选择Prometheus<br>    <img src="/.cn//graaddpro.png" alt></p>
